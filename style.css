@@ -1,0 +1,236 @@
+body {
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background-color: #e6f0f3; /* color más claro y limpio */
+}
+
+section {
+  padding: 1.5rem;
+  max-width: 700px;
+  margin: auto;
+}
+
+h2 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+
+.logo {
+  width: 100px;
+  height: auto;
+  margin-bottom: 0%;
+}
+
+nav {
+  background-color:rgb(98, 103, 99) ;
+  padding: 1rem 0;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  gap: 2rem;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+section {
+  padding: 2rem;
+  max-width: 800px;
+  margin: auto;
+}
+
+.features ul {
+  list-style: none;
+  padding: 0;
+}
+
+.features li {
+  background: #e0eafc;
+  margin: 1rem 0;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+footer {
+  text-align: center;
+  background-color: rgb(98, 103, 99);
+  color: white;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapper {
+  flex: 1;
+}
+/* Mosaico responsive */
+.mosaic-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+/* Cada caja del mosaico */
+.mosaic-box {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  min-height: 160px;
+  transition: transform 0.3s ease;
+}
+
+.mosaic-box:hover {
+  transform: scale(1.03);
+}
+
+
+.overlay {
+  
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  border-radius: 8px;
+  z-index: 2;
+}
+
+.box1 {
+  background-image: url("imagenes/energia.jpg");
+  grid-column: span 2;
+  grid-row: span 2;
+  min-height: 280px;
+}
+
+.box2 {
+  background-image: url("imagenes/edificios.jpg");
+  grid-row: span 2;
+}
+
+.box3 {
+  background-image: url("imagenes/transporte.jpg");
+  grid-column: span 2;
+}
+
+.box4 {
+  background-image: url("imagenes/zonas.jpg");
+  grid-row: span 2;
+}
+
+.box5 {
+  background-image: url("imagenes/reciclaje.png");
+  grid-column: span 2;
+  grid-row: span 2;
+  min-height: 280px;
+}
+
+
+@media (max-width: 600px) {
+  .mosaic-grid {
+    grid-template-columns: 1fr; 
+  }
+
+  .box1, .box2, .box3, .box4, .box5 {
+    grid-column: span 1 !important;
+    grid-row: span 1 !important;
+    min-height: 180px;
+  }
+}
+header {
+  background-image: url('imagenes/banner.jpg'); 
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+  padding: 4rem 1rem;
+  position: relative;
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4); 
+  z-index: 0;
+}
+
+header * {
+  position: relative;
+  z-index: 1;
+}
+
+.logo {
+  width: 100px;
+  height: auto;
+  margin-bottom: 1rem;
+}
+@media (max-width: 600px) {
+  header {
+    padding: 3rem 1rem;
+    background-size: cover;    
+    background-position: center;  
+  }
+
+  .logo {
+    width: 80px; 
+  }
+}
+@media (max-width: 600px) {
+  body {
+    font-size: 17px; 
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  section {
+    padding: 1rem;
+  }
+
+  nav ul li a {
+    font-size: 1.1rem;
+  }
+}
+.feature-image {
+  display: flex;
+  justify-content: center;
+  margin: 1.5rem auto;
+}
+
+.feature-image img {
+  max-width: 90%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
