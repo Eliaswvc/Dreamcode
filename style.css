@@ -4,7 +4,8 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  background-color: #e6f0f3; /* color más claro y limpio */
+  background-color:	#202123 ; 
+  color: white;
 }
 
 section {
@@ -93,36 +94,38 @@ html, body {
   margin-top: 2rem;
 }
 
-/* Cada caja del mosaico */
+.mosaic-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+
 .mosaic-box {
   position: relative;
+  height: 200px;
   background-size: cover;
   background-position: center;
   border-radius: 10px;
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  min-height: 160px;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s;
 }
 
 .mosaic-box:hover {
-  transform: scale(1.03);
+  transform: scale(1.05);
 }
 
-
-.overlay {
-  
+.mosaic-box .overlay {
+  position: absolute;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
   color: white;
-  font-weight: bold;
-  font-size: 1.2rem;
-  padding: 0.5rem 1rem;
+  width: 100%;
   text-align: center;
-  border-radius: 8px;
-  z-index: 2;
+  padding: 0.5rem;
+  font-size: 1.2rem;
 }
+
 
 .box1 {
   background-image: url("imagenes/energia.jpg");
@@ -169,7 +172,7 @@ header {
   background-image: url('imagenes/banner.jpg'); 
   background-size: cover;
   background-position: center;
-  color: white;
+  color: rgb(152, 166, 176);
   text-align: center;
   padding: 4rem 1rem;
   position: relative;
