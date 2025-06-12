@@ -1,16 +1,29 @@
+/* ------------------ ESTILOS GENERALES ------------------ */
 body {
   font-size: 16px;
   line-height: 1.6;
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  background-color:	#202123 ; 
+  background-color: #202123;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   color: white;
 }
 
+html, body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapper {
+  flex: 1;
+}
+
 section {
-  padding: 1.5rem;
-  max-width: 700px;
+  padding: 2rem;
+  max-width: 800px;
   margin: auto;
 }
 
@@ -20,85 +33,77 @@ h2 {
 }
 
 
+header {
+  background-image: url('imagenes/banner.jpg');
+  background-size: cover;
+  background-position: center;
+  color: rgb(152, 166, 176);
+  text-align: center;
+  padding: 4rem 1rem;
+  position: relative;
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4); 
+  z-index: 0;
+}
+
+header * {
+  position: relative;
+  z-index: 1;
+}
+
 .logo {
   width: 100px;
-  height: auto;
-  margin-bottom: 0%;
+  height: 100px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+  border-radius: 0;
 }
 
-nav {
-  background-color:rgb(98, 103, 99) ;
-  padding: 1rem 0;
+
+.navbar {
+  position: sticky;
+  top: 0;
+  background-color: rgb(98, 103, 99);
+  padding: 0.5rem 1rem;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-nav ul {
+.navbar ul {
   list-style: none;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   margin: 0;
   padding: 0;
   gap: 2rem;
 }
 
-nav a {
-  color: white;
+.navbar a {
   text-decoration: none;
-  font-weight: bold;
-}
-
-nav a:hover {
-  text-decoration: underline;
-}
-
-section {
-  padding: 2rem;
-  max-width: 800px;
-  margin: auto;
-}
-
-.features ul {
-  list-style: none;
-  padding: 0;
-}
-
-.features li {
-  background: #e0eafc;
-  margin: 1rem 0;
-  padding: 1rem;
-  border-radius: 10px;
-}
-
-footer {
-  text-align: center;
-  background-color: rgb(98, 103, 99);
   color: white;
-  padding: 1rem;
-  margin-top: 1rem;
+  font-weight: bold;
+  padding: 0.5rem;
+  transition: background-color 0.3s;
 }
 
-html, body {
-  height: 100%;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
+.navbar a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
 }
 
-.wrapper {
-  flex: 1;
-}
-/* Mosaico responsive */
-.mosaic-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 1rem;
-  margin-top: 2rem;
-}
 
 .mosaic-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1rem;
   padding: 1rem;
+  margin-top: 2rem;
 }
 
 .mosaic-box {
@@ -157,59 +162,18 @@ html, body {
 }
 
 
-@media (max-width: 600px) {
-  .mosaic-grid {
-    grid-template-columns: 1fr; 
-  }
-
-  .box1, .box2, .box3, .box4, .box5 {
-    grid-column: span 1 !important;
-    grid-row: span 1 !important;
-    min-height: 180px;
-  }
-}
-header {
-  background-image: url('imagenes/banner.jpg'); 
-  background-size: cover;
-  background-position: center;
-  color: rgb(152, 166, 176);
+footer {
   text-align: center;
-  padding: 4rem 1rem;
-  position: relative;
+  background-color: rgb(98, 103, 99);
+  color: white;
+  padding: 1rem;
+  margin-top: 1rem;
 }
 
-header::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.4); 
-  z-index: 0;
-}
 
-header * {
-  position: relative;
-  z-index: 1;
-}
-
-.logo {
-  width: 100px;
-  height: auto;
-  margin-bottom: 1rem;
-}
-@media (max-width: 600px) {
-  header {
-    padding: 3rem 1rem;
-    background-size: cover;    
-    background-position: center;  
-  }
-
-  .logo {
-    width: 80px; 
-  }
-}
 @media (max-width: 600px) {
   body {
-    font-size: 17px; 
+    font-size: 17px;
   }
 
   h2 {
@@ -220,10 +184,32 @@ header * {
     padding: 1rem;
   }
 
-  nav ul li a {
+  .logo {
+    width: 80px;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .navbar a {
     font-size: 1.1rem;
   }
+
+  .mosaic-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .box1, .box2, .box3, .box4, .box5 {
+    grid-column: span 1 !important;
+    grid-row: span 1 !important;
+    min-height: 180px;
+  }
 }
+
+
 .feature-image {
   display: flex;
   justify-content: center;
@@ -236,4 +222,3 @@ header * {
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
-
